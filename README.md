@@ -1,27 +1,51 @@
 # Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
-
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Code Explanation  
 
-## Build
+Implemented using Angular 16
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Components
 
-## Running unit tests
+Use two components 
+    
+#### price-calculator component
+    used this component for render form to submit product name,quantity.then retieve the result.
+#### price-list component
+    Used this compnent to list the price list of the selected product.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Models
 
-## Running end-to-end tests
+#### Product Interface
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    Defines the structure of a product entity
 
-## Further help
+#### PriceCalculation Interface
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    Defines the structure of the price calculation response from the backend
+
+
+### Service
+
+#### PricingService
+
+    fetching price calculations from the backend API
+
+##### calculatePrice()
+
+    Sends a GET request to calculate the price.
+    GET /api/pricing/calculate (with parameters)
+
+##### getPriceList()
+
+    Fetches a list of price calculations for a selected product.
+    GET /api/pricing/price-list?productName=<name>
+
+
+### Styles
+
+used globle styles and seperate styles for the components
