@@ -1,0 +1,32 @@
+<div class="price-list">
+    <h2>Price List</h2>
+    <select 
+      [(ngModel)]="selectedProduct" 
+      (change)="loadPriceList()"
+      class="form-control"
+      name="productSelect"
+    >
+      <option value="">Select Product</option>
+      <option value="Apple">Apple</option>
+      <option value="King Coconut">King Coconut</option>
+    </select>
+
+    <table *ngIf="priceList.length" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Quantity</th>
+          <th>Cartons</th>
+          <th>Single Units</th>
+          <th>Total Price (Rs.)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let price of priceList">
+          <td>{{ price.quantityRequested }}</td>
+          <td>{{ price.cartons }}</td>
+          <td>{{ price.singleUnits }}</td>
+          <td>{{ price.totalPrice | number:'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

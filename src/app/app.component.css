@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .col-md-6 {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  }
+  

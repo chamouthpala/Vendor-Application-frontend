@@ -1,0 +1,55 @@
+<div class="price-calculator">
+    <h2>Product Price Calculator</h2>
+    <form (ngSubmit)="calculatePrice()">
+      <select 
+        [(ngModel)]="selectedProduct" 
+        name="product" 
+        required 
+        class="form-control"
+      >
+        <option value="">Select Product</option>
+        <option value="Apple">Apple</option>
+        <option value="King Coconut">King Coconut</option>
+      </select>
+      
+      <input 
+        type="number" 
+        [(ngModel)]="quantity" 
+        name="quantity" 
+        placeholder="Quantity" 
+        required 
+        min="1"
+        class="form-control"
+      >
+      
+      <button type="submit" class="btn btn-primary">Calculate Price</button>
+    </form>
+  
+    <div *ngIf="calculation" class="result mt-4">
+      <h3>Calculation Result</h3>
+      <table class="table">
+        <tr>
+          <th>Product</th>
+          <td>{{ calculation.productName }}</td>
+        </tr>
+        <tr>
+          <th>Quantity</th>
+          <td>{{ calculation.quantityRequested }}</td>
+        </tr>
+        <tr>
+          <th>Cartons</th>
+          <td>{{ calculation.cartons }}</td>
+        </tr>
+        <tr>
+          <th>Single Units</th>
+          <td>{{ calculation.singleUnits }}</td>
+        </tr>
+        <tr>
+          <th>Total Price</th>
+          <td>Rs. {{ calculation.totalPrice | number:'1.2-2' }}</td>
+        </tr>
+      </table>
+    </div>
+    
+  </div>
+  

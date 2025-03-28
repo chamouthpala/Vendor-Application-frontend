@@ -1,0 +1,44 @@
+.price-list {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+
+.table {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.table td {
+  text-align: center;
+  padding: 10px;
+  color: #495057;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f1f1f1;
+}
+
+.table-striped tbody tr:hover {
+  background-color: #d4edda;
+}
